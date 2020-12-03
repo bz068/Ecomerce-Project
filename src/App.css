@@ -1,38 +1,341 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --bg: rgb(233, 173, 61);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cont {
+  width: 300px;
+  height: 140px;
+  background-color: white;
+  transform: skewY(-7deg);
+  z-index: 0;
+  /* border: 1px solid; */
+  position: relative;
+  top: -20px;
+  left: -30px;
+}
+
+.logo {
+  width: 240px;
+  position: absolute;
+  top: 10px;
+  font-family: Do Hyeon;
+  font-size: 50px;
+}
+
+.navBar {
+  background-color: rgb(233, 173, 61);
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  /* justify-content: space-between; */
+  animation: slideFromTop 1s ease-in;
+}
+.navLinks li {
+  padding: 6px;
+  margin-left: 15px;
+  list-style: none;
+  font-weight: bold;
+  /* transition: padding 1s; */
+}
+
+.navLinks li:hover {
+  background-color: rgb(184, 111, 89);
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(250, 236, 227);
+  transition-duration: 0.5s;
+}
+
+.header {
+  padding: 0 30px;
+  /* border: 1px solid; */
+  height: 350px;
+  background-color: rgb(233, 173, 61);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* .header div {
+  border: 1px solid;
+} */
+
+.header .homeForm {
+  position: relative;
+  top: 40px;
+  background-color: rgb(255, 255, 255);
+  float: right;
+  padding: 30px;
+  float: right;
+  margin: auto;
+  border-radius: 5px;
+  height: auto;
+  width: 90%;
+  display: block;
+  box-shadow: 10px 15px 28px rgba(228, 0, 0, 0.459);
+  z-index: 2;
+  animation: slideFromRight 1s ease-in;
+}
+
+.homeForm input[type="text"] {
+  margin: 10px 0;
+  padding-left: 10px;
+  width: 98%;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  border-left: 1px solid;
+}
+.homeForm input[type="text"]:focus {
+  outline: none;
+}
+
+.homeForm textarea {
+  border: none;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  margin: 10px 0;
+  padding-left: 10px;
+  width: 98%;
+  height: 100px;
+  max-height: 120px;
+}
+.homeForm textarea:focus {
+  outline: none;
+}
+
+.homeForm button {
+  margin-left: 20px;
+  float: right;
+  height: 30px;
+  width: 70px;
+  background-color: rgb(0, 230, 153);
+}
+
+.underForm {
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+  /* border: 1px solid; */
+  width: 100%;
+  float: right;
+  transform: skewY(-3deg);
+  /* z-index: -1; */
+  position: relative;
+  top: -10px;
+  /* bottom: -70px; */
+}
+
+.info button {
+  border: 1px solid;
+  padding: 10px;
+  margin: 25px 5px;
+  background-color: var(--bg);
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+p {
+  position: relative;
+}
+
+.body {
+  /* background-color: purple; */
+  /* border: 1px solid; */
+  position: relative;
+  top: 95px;
+  height: 500px;
+  font-family: "Poppins";
+  /* padding: 20px; */
+}
+
+.keyInfo {
+  /* border: 1px solid; */
+  position: relative;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.keyInfo h2 {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* box-shadow: 10px 15px 28px rgb(255, 196, 0); */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.grid {
+  /* background-color: red; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  animation: slideFromBottam 1s ease-in;
+}
+
+.grid h3 {
+  margin-top: 10px;
+}
+
+.cont1 {
+  height: fit-content;
+  background-color: var(--bg);
+  margin: 50px 0;
+  padding: 1px 0;
+  animation: slideFromBottam 1s ease-in;
+}
+
+.cont1 h2 {
+  /* border: 1px solid; */
+
+  margin: 30px auto;
+  width: fit-content;
+  box-shadow: 10px 15px 28px rgb(255, 242, 206);
+}
+
+/* animation */
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideFromBottam {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 800px) {
+  .header {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header .homeForm {
+    position: relative;
+    top: 1px;
+  }
+  .info button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .body {
+    margin-top: 80px;
+    /* padding: 60px 0; */
+  }
+  .grid {
+    position: relative;
+    top: 35px;
+  }
+  .cont {
+    height: 100px;
+    position: absolute;
+  }
+  .logo {
+    width: 200px;
+  }
+  .navLinks {
+    position: absolute;
+    right: 10px;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .logo {
+    font-size: 20px;
+  }
+  .header .homeForm {
+    width: 100%;
+  }
+  .body {
+    margin-top: 100px;
+    /* padding: 60px 0; */
+  }
+  p {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+  .cont1 h2 {
+    /* border: 1px solid; */
+    position: relative;
+    margin: 10px auto;
+  }
+
+  .cont1 .grid {
+    /* border: 1px solid; */
+    position: relative;
+    margin: 2px auto;
+    top: 5px;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .navBar {
+    width: 100%;
+    /* border: 1px solid; */
+    padding-top: 10px;
+    display: block;
+  }
+
+  .body {
+    margin-top: 120px;
+  }
+
+  .grid {
+    display: block;
+  }
+  p {
+    margin-top: 20px;
+  }
+  .info button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .cont {
+    height: 90px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .body {
+    margin-top: 140px;
+    padding: 40px 0;
   }
 }
